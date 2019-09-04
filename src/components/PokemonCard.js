@@ -31,8 +31,11 @@ const PokemonCard = ({pokemonId, useSaga}) => {
     return <div className='loading'>loading pokemon...</div>
   }
 
+  const has2InId = pokemonId.toString().indexOf('2') !== -1;
+  const isHalographic = [1,4,7].includes(pokemonId) || has2InId;
+
   return pokemonId && !pokemon.loading && (
-    <div className='pokemon-card' style={{backgroundColor: pokemon.backgroundColor}}>
+    <div className={`pokemon-card ${isHalographic ? 'halographic' : ''}`} style={{backgroundColor: pokemon.backgroundColor}}>
       <img src={`${POKEMON_IMAGE_ENDPOINT}${pokemon.id}.png`} alt={pokemon.name} />
       <div className='pokemon-name'>{pokemon.name}</div>
       <Attribute attribute='Base Experience:' value={pokemon.base_experience} />

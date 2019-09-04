@@ -2,14 +2,16 @@ import { put, takeEvery, takeLatest, all, select } from 'redux-saga/effects';
 import {BASE_POKEMONS, POKEMON_BASE_ENDPOINT} from '../utils/constants';
 
 
-const formatPokemonInfo = (pokemon, pokemonTypeId) => {
+const formatPokemonInfo = (pokemon, pokemonId) => {
+  const isHalographic = pokemonId.toString().indexOf('2') !== -1;
+
   const simplifiedPokemon = {
-    id: pokemonTypeId,
+    id: pokemonId,
     name: pokemon.name,
     height: pokemon.height,
     weight: pokemon.weight,
     base_experience: pokemon.base_experience,
-    backgroundColor: BASE_POKEMONS[pokemon.name] ? BASE_POKEMONS[pokemon.name].backgroundColor : 'white'
+    backgroundColor: BASE_POKEMONS[pokemon.name] ? BASE_POKEMONS[pokemon.name].backgroundColor : isHalographic ? 'lightpurple' : 'white'
   }
 
   return simplifiedPokemon;

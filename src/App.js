@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       <div className='pokemon-container'>
-        <PokemonCard pokemonId={1}/>
-        <PokemonCard pokemonId={4}/>
-        <PokemonCard pokemonId={7}/>
+        <PokemonCard pokemonId={1} />
+        <PokemonCard pokemonId={4} />
+        <PokemonCard pokemonId={7} />
       </div>
       <RandomPokemon />
       <AvailablePokemon />

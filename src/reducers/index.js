@@ -7,7 +7,9 @@ const setPokemonToLoading = (state, action) => {
   if (specificPokemon) {
     specificPokemon.loading = true;
   } else {
-    newPokemonsState.push({id: pokemonId, backgroundColor: 'white', loading: true})
+    const isHalographic = pokemonId.toString().indexOf('2') !== -1;
+
+    newPokemonsState.push({id: pokemonId, backgroundColor: isHalographic ? 'lightpurple' : 'white', loading: true})
   }
 
   return newPokemonsState;
