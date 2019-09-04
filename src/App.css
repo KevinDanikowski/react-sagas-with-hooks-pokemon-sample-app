@@ -53,3 +53,13 @@
 .loading {
   height: 220px;
 }
+
+.available-pokemon-container {
+  display: flex;
+  overflow: hidden;
+  max-width: 80vw;
+  overflow-x: scroll;
+  border-radius: 10px;
+  border: 1px solid black;
+  position: relative;
+}

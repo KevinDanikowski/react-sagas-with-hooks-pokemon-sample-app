@@ -1,6 +1,7 @@
 import React from 'react';
 import PokemonCard from './components/PokemonCard';
 import RandomPokemon from './components/RandomPokemon';
+import AvailablePokemon from './components/AvailablePokemon'
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <PokemonCard pokemonId={7}/>
       </div>
       <RandomPokemon />
+      <AvailablePokemon />
     </div>
   );
 }
