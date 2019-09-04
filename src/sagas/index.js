@@ -1,4 +1,3 @@
-// import {select} from 'react-redux';
 import { put, takeEvery, takeLatest, all, select } from 'redux-saga/effects';
 import {BASE_POKEMONS, POKEMON_BASE_ENDPOINT} from '../utils/constants';
 
